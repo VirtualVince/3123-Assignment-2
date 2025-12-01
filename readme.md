@@ -23,8 +23,6 @@ This Employee Management System is a comprehensive CRUD application developed as
 
 ## 🎥 Demo
 
-[Add screenshots or GIF demo of your application here]
-
 ## 🛠️ Tech Stack
 
 ### Frontend
@@ -373,8 +371,9 @@ git push heroku main
 ### Environment Variables for Production
 
 **Backend:**
-- `MONGODB_URI` - You will need your own
-- `JWT_SECRET` - You will need your own
+- `MONGODB_URI` 
+- `JWT_SECRET` 
+- `PORT` 
 
 
 ### Backend (.env)
