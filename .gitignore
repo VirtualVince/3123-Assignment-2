@@ -70,19 +70,19 @@ Desktop.ini
 *.key
 *.cert
 
-# Optional: If using Docker
+# Docker
 docker-compose.override.yml
 .dockerignore
 
-# Optional: Database files (if using local SQLite or similar)
+# Database files
 *.sqlite
 *.sqlite3
 *.db
 
-# Optional: If using TypeScript
+# If using TypeScript
 *.tsbuildinfo
 
-# Optional: If using Next.js
+# If using Next.js
 .next/
 out/
 
