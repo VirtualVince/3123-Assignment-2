@@ -1,0 +1,107 @@
+# Dependencies
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+yarn.lock
+
+# Environment Variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Production Build
+/frontend/build
+/frontend/dist
+/backend/dist
+
+# IDE and Editor Files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+*.sublime-project
+*.sublime-workspace
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# OS Files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+Desktop.ini
+
+# Uploads and User Generated Content
+/backend/uploads/*
+# Keep the uploads directory but ignore its contents
+!/backend/uploads/.gitkeep
+
+# Testing
+/coverage
+.nyc_output
+*.lcov
+
+# Temporary Files
+*.tmp
+*.temp
+.cache/
+
+# Debug
+.pnp.*
+.yarn/
+
+# Misc
+*.pem
+*.key
+*.cert
+
+# Optional: If using Docker
+docker-compose.override.yml
+.dockerignore
+
+# Optional: Database files (if using local SQLite or similar)
+*.sqlite
+*.sqlite3
+*.db
+
+# Optional: If using TypeScript
+*.tsbuildinfo
+
+# Optional: If using Next.js
+.next/
+out/
+
+# MongoDB local data (if running MongoDB locally)
+/data/
+/db/
+
+# React
+.eslintcache
+
+# macOS
+.AppleDouble
+.LSOverride
+
+# Windows
+$RECYCLE.BIN/
+
+# Linux
+.fuse_hidden*
+.directory
+.Trash-*
+.nfs*

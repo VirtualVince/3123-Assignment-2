@@ -1,359 +1,430 @@
-# COMP 3123 Assignment II - Employee Management System
+# Employee Management System
 
-Full-stack Employee Management System built with React, Node.js, Express, and MongoDB.
+A full-stack web application for managing employee records with user authentication, built with the MERN stack (MongoDB, Express.js, React, Node.js).
 
-## 📋 Features
+![License](https://img.shields.io/badge/license-MIT-blue.svg)
+![Node](https://img.shields.io/badge/node-%3E%3D14.0.0-brightgreen)
+![React](https://img.shields.io/badge/react-18.2.0-blue)
 
-- User Authentication (Signup/Login)
-- Employee CRUD Operations
-- Profile Picture Upload
-- Search by Department/Position
-- Responsive UI Design
-- Session Management with JWT
-- Protected Routes
+## 📖 About
 
-## 🛠️ Technology Stack
+This Employee Management System is a comprehensive CRUD application developed as part of COMP 3123 - Full Stack Development course. It demonstrates modern web development practices including RESTful API design, JWT authentication, file uploads, and responsive UI design.
 
-**Frontend:**
-- React 18
-- React Router DOM
-- Axios
-- Context API for state management
+### Key Features
 
-**Backend:**
-- Node.js
-- Express.js
-- MongoDB with Mongoose
-- JWT Authentication
-- Multer for file uploads
-- Bcrypt for password hashing
+- 🔐 **Secure Authentication** - JWT-based user signup and login
+- 👥 **Employee CRUD** - Complete Create, Read, Update, Delete operations
+- 🖼️ **Profile Pictures** - Upload and manage employee profile images
+- 🔍 **Advanced Search** - Filter employees by department or position
+- 📱 **Responsive Design** - Works seamlessly on desktop and mobile devices
+- 🎨 **Modern UI** - Clean, professional interface with smooth animations
+- 🔒 **Protected Routes** - Secure pages requiring authentication
+- ⚡ **Real-time Validation** - Instant form validation feedback
 
-## 📁 Project Structure
+## 🎥 Demo
 
-```
-studentID_comp3123_assignment/
-├── backend/
-│   ├── models/
-│   │   ├── User.js
-│   │   └── Employee.js
-│   ├── routes/
-│   │   ├── userRoutes.js
-│   │   └── employeeRoutes.js
-│   ├── middleware/
-│   │   └── auth.js
-│   ├── uploads/
-│   ├── server.js
-│   ├── .env
-│   └── package.json
-│
-└── frontend/
-    ├── src/
-    │   ├── components/
-    │   │   ├── Login.js
-    │   │   ├── Signup.js
-    │   │   ├── EmployeeList.js
-    │   │   ├── AddEmployee.js
-    │   │   ├── EditEmployee.js
-    │   │   ├── ViewEmployee.js
-    │   │   ├── PrivateRoute.js
-    │   │   ├── Auth.css
-    │   │   └── Employee.css
-    │   ├── context/
-    │   │   └── AuthContext.js
-    │   ├── services/
-    │   │   └── api.js
-    │   ├── App.js
-    │   ├── App.css
-    │   └── index.js
-    └── package.json
-```
+[Add screenshots or GIF demo of your application here]
 
-## 🚀 Setup Instructions
+## 🛠️ Tech Stack
 
-### Prerequisites
-- Node.js (v14 or higher)
-- MongoDB (running locally or MongoDB Atlas)
-- Git
+### Frontend
+- **React** 18.2.0 - UI library
+- **React Router DOM** 6.20.0 - Client-side routing
+- **Axios** 1.6.2 - HTTP client
+- **Context API** - State management
+- **CSS3** - Custom styling with modern design
 
-### 1. Clone or Create the Project
+### Backend
+- **Node.js** - Runtime environment
+- **Express.js** 4.18.2 - Web framework
+- **MongoDB** - NoSQL database
+- **Mongoose** 8.0.0 - ODM for MongoDB
+- **JWT** - Authentication tokens
+- **Bcrypt** - Password hashing
+- **Multer** - File upload handling
+
+## 📋 Prerequisites
+
+Before you begin, ensure you have the following installed:
+- **Node.js** (v14.0.0 or higher)
+- **npm** (v6.0.0 or higher)
+- **MongoDB** (v4.0 or higher) - Either locally or MongoDB Atlas account
+- **Git** - For cloning the repository
+
+## 🚀 Installation & Setup
+
+### 1. Clone the Repository
 
 ```bash
-# Create project directory
-mkdir studentID_comp3123_assignment
-cd studentID_comp3123_assignment
+git clone https://github.com/VirtualVince/3123-Assignment-2.git
+cd 3123-Assignment-2
 ```
 
 ### 2. Backend Setup
 
 ```bash
-# Create backend directory
-mkdir backend
+# Navigate to backend directory
 cd backend
 
-# Initialize npm
-npm init -y
-
 # Install dependencies
-npm install express mongoose cors bcryptjs jsonwebtoken multer dotenv
+npm install
 
-# Install dev dependencies
-npm install --save-dev nodemon
-
-# Create project structure
-mkdir models routes middleware uploads
+# Create .env file
+cp .env.example .env
 ```
 
-Create the files I provided in the artifacts:
-- `server.js`
-- `models/User.js`
-- `models/Employee.js`
-- `routes/userRoutes.js`
-- `routes/employeeRoutes.js`
-- `middleware/auth.js`
-- `.env`
+Edit the `.env` file with your configuration:
 
-Update your `package.json` scripts:
-```json
-"scripts": {
-  "start": "node server.js",
-  "dev": "nodemon server.js"
-}
-```
-
-### 3. MongoDB Setup
-
-**Option A: Local MongoDB**
-```bash
-# Start MongoDB service
-mongod
-```
-
-**Option B: MongoDB Atlas**
-1. Create account at [MongoDB Atlas](https://www.mongodb.com/cloud/atlas)
-2. Create a cluster
-3. Get connection string
-4. Update `.env` file with your connection string
-
-### 4. Frontend Setup
-
-```bash
-# From project root
-cd ..
-
-# Create React app
-npx create-react-app frontend
-
-# Navigate to frontend
-cd frontend
-
-# Install dependencies
-npm install react-router-dom axios
-```
-
-Create the directory structure:
-```bash
-mkdir src/components src/context src/services
-```
-
-Copy all the React component files I provided into their respective directories.
-
-Update `package.json` to include the proxy:
-```json
-"proxy": "http://localhost:5000"
-```
-
-### 5. Environment Variables
-
-Create `.env` file in backend directory:
 ```env
 MONGODB_URI=mongodb://localhost:27017/comp3123_assignment
 JWT_SECRET=your_super_secret_jwt_key_change_this_in_production
 PORT=5000
 ```
 
-Optional: Create `.env` in frontend directory:
+**For MongoDB Atlas:**
+```env
+MONGODB_URI=mongodb+srv://<username>:<password>@cluster.mongodb.net/comp3123_assignment?retryWrites=true&w=majority
+```
+
+### 3. Frontend Setup
+
+```bash
+# Navigate to frontend directory (from project root)
+cd ../frontend
+
+# Install dependencies
+npm install
+```
+
+Optional: Create `.env` file in frontend directory:
 ```env
 REACT_APP_API_URL=http://localhost:5000/api/v1
 ```
 
-## ▶️ Running the Application
+### 4. Start the Application
 
-### Start Backend Server
+#### Start Backend Server
 
 ```bash
-cd backend
+# From backend directory
 npm run dev
 ```
 
-Server will run on `http://localhost:5000`
+The backend server will start on `http://localhost:5000`
 
-### Start Frontend Development Server
+You should see:
+```
+Server running on port 5000
+MongoDB Connected
+```
+
+#### Start Frontend Development Server
 
 ```bash
-cd frontend
+# From frontend directory (open new terminal)
 npm start
 ```
 
-React app will open automatically at `http://localhost:3000`
+The React app will automatically open at `http://localhost:3000`
 
-## 🔐 API Endpoints
+## 📁 Project Structure
 
-### User Routes
-- `POST /api/v1/user/signup` - Create new user
-- `POST /api/v1/user/login` - User login
+```
+3123-Assignment-2/
+│
+├── backend/
+│   ├── middleware/
+│   │   └── auth.js                 # JWT authentication middleware
+│   ├── models/
+│   │   ├── User.js                 # User schema
+│   │   └── Employee.js             # Employee schema
+│   ├── routes/
+│   │   ├── userRoutes.js           # Authentication routes
+│   │   └── employeeRoutes.js       # Employee CRUD routes
+│   ├── uploads/                    # Profile pictures storage
+│   ├── server.js                   # Express server entry point
+│   ├── .env                        # Environment variables
+│   ├── .gitignore
+│   └── package.json
+│
+└── frontend/
+    ├── public/
+    ├── src/
+    │   ├── components/
+    │   │   ├── Login.js            # Login page
+    │   │   ├── Signup.js           # Registration page
+    │   │   ├── EmployeeList.js     # Employee table view
+    │   │   ├── AddEmployee.js      # Add employee form
+    │   │   ├── EditEmployee.js     # Edit employee form
+    │   │   ├── ViewEmployee.js     # Employee details view
+    │   │   ├── PrivateRoute.js     # Route protection
+    │   │   ├── Auth.css            # Auth page styles
+    │   │   └── Employee.css        # Employee page styles
+    │   ├── context/
+    │   │   └── AuthContext.js      # Authentication context
+    │   ├── services/
+    │   │   └── api.js              # Axios API configuration
+    │   ├── App.js                  # Main app component
+    │   ├── App.css                 # Global styles
+    │   └── index.js                # React entry point
+    ├── .gitignore
+    └── package.json
+```
 
-### Employee Routes (Protected)
-- `GET /api/v1/emp/employees` - Get all employees
-- `GET /api/v1/emp/employees/:id` - Get employee by ID
-- `POST /api/v1/emp/employees` - Create new employee
-- `PUT /api/v1/emp/employees/:id` - Update employee
-- `DELETE /api/v1/emp/employees/:id` - Delete employee
-- `GET /api/v1/emp/search?department=X&position=Y` - Search employees
+## 🔌 API Endpoints
 
-## 📱 Application Features
+### Authentication Endpoints
 
-### Authentication
-1. **Signup**: Create new account with username, email, and password
-2. **Login**: Authenticate and receive JWT token
-3. **Session Management**: Token stored in localStorage
-4. **Protected Routes**: Automatic redirect to login if not authenticated
+| Method | Endpoint | Description | Auth Required |
+|--------|----------|-------------|---------------|
+| POST | `/api/v1/user/signup` | Register new user | No |
+| POST | `/api/v1/user/login` | User login | No |
 
-### Employee Management
-1. **View All Employees**: Display in table format with profile pictures
-2. **Add Employee**: Form with all fields including file upload
-3. **Edit Employee**: Update employee information
-4. **View Details**: See complete employee information
-5. **Delete Employee**: Remove employee with confirmation
-6. **Search**: Filter by department or position
+**Signup Request Body:**
+```json
+{
+  "username": "johndoe",
+  "email": "john@example.com",
+  "password": "password123"
+}
+```
 
-## 🎨 UI/UX Features
+**Login Request Body:**
+```json
+{
+  "email": "john@example.com",
+  "password": "password123"
+}
+```
 
-- Professional gradient design
-- Responsive layout for all screen sizes
-- Form validation with error messages
-- Loading states for better UX
-- Success/Error notifications
-- Hover effects and smooth transitions
-- Profile picture preview before upload
+### Employee Endpoints
 
-## 📝 Testing the Application
+| Method | Endpoint | Description | Auth Required |
+|--------|----------|-------------|---------------|
+| GET | `/api/v1/emp/employees` | Get all employees | Yes |
+| GET | `/api/v1/emp/employees/:id` | Get employee by ID | Yes |
+| POST | `/api/v1/emp/employees` | Create new employee | Yes |
+| PUT | `/api/v1/emp/employees/:id` | Update employee | Yes |
+| DELETE | `/api/v1/emp/employees/:id` | Delete employee | Yes |
+| GET | `/api/v1/emp/search` | Search employees | Yes |
 
-1. Start both backend and frontend servers
-2. Navigate to `http://localhost:3000`
-3. Create a new account via Signup
-4. Login with your credentials
-5. Add some employees with profile pictures
-6. Test CRUD operations
-7. Try search functionality
-8. Test logout and session persistence
+**Create Employee Request Body (multipart/form-data):**
+```json
+{
+  "first_name": "John",
+  "last_name": "Doe",
+  "email": "john.doe@company.com",
+  "position": "Software Engineer",
+  "salary": 75000,
+  "date_of_joining": "2024-01-15",
+  "department": "Engineering",
+  "profile_picture": [File]
+}
+```
+
+**Search Query Parameters:**
+```
+GET /api/v1/emp/search?department=Engineering&position=Manager
+```
+
+## 🔐 Authentication
+
+The application uses JWT (JSON Web Tokens) for authentication:
+
+1. User signs up or logs in
+2. Server generates JWT token
+3. Token is stored in localStorage
+4. Token is sent with each API request in Authorization header: `Bearer <token>`
+5. Backend middleware verifies token before processing protected routes
+
+## 🎨 Features Walkthrough
+
+### 1. User Registration & Login
+- Create account with username, email, and password
+- Secure password hashing with bcrypt
+- Form validation for all fields
+- Automatic redirect to employee list after login
+
+### 2. Employee Management
+- **View All**: Displays employees in a responsive table
+- **Add New**: Form to create employee with profile picture
+- **Edit**: Update employee information
+- **View Details**: See complete employee profile
+- **Delete**: Remove employee with confirmation dialog
+
+### 3. Search Functionality
+- Filter by department
+- Filter by position
+- Combined search criteria
+- Real-time results
+
+### 4. Profile Pictures
+- Upload during employee creation
+- Update existing photos
+- Preview before submission
+- Automatic image validation (format, size)
+
+## 🧪 Testing the Application
+
+### Manual Testing Checklist
+
+- [ ] Create new user account
+- [ ] Login with credentials
+- [ ] Add employee without photo
+- [ ] Add employee with photo
+- [ ] View employee list
+- [ ] Search by department
+- [ ] Search by position
+- [ ] View employee details
+- [ ] Edit employee information
+- [ ] Update profile picture
+- [ ] Delete employee
+- [ ] Logout and verify session cleared
+- [ ] Try accessing protected routes without login
+
+### Sample Test Data
+
+```javascript
+// Test User
+{
+  "username": "testuser",
+  "email": "test@example.com",
+  "password": "test123"
+}
+
+// Test Employee
+{
+  "first_name": "Jane",
+  "last_name": "Smith",
+  "email": "jane.smith@company.com",
+  "position": "Senior Developer",
+  "salary": 95000,
+  "date_of_joining": "2023-06-01",
+  "department": "Engineering"
+}
+```
 
 ## 🐛 Troubleshooting
 
-### MongoDB Connection Issues
-- Ensure MongoDB is running
-- Check connection string in `.env`
-- Verify network access in MongoDB Atlas
+### Common Issues and Solutions
 
-### CORS Issues
-- Ensure CORS is enabled in backend
-- Check proxy setting in frontend `package.json`
+#### MongoDB Connection Error
+```
+Error: MongoDB Connection Error
+```
+**Solution:**
+- Ensure MongoDB is running: `mongod` or check MongoDB Atlas connection
+- Verify `MONGODB_URI` in `.env` file
+- Check network access in MongoDB Atlas (whitelist your IP)
 
-### File Upload Issues
-- Verify `uploads` directory exists
-- Check file size limits (5MB default)
-- Ensure correct file types (images only)
+#### CORS Issues
+```
+Access to XMLHttpRequest blocked by CORS policy
+```
+**Solution:**
+- Ensure backend server is running
+- Check `cors()` is enabled in `server.js`
+- Verify `proxy` setting in frontend `package.json`
 
-### Token Issues
-- Clear localStorage if authentication fails
-- Check JWT_SECRET matches in backend
-- Verify token expiration time
+#### Token Expired/Invalid
+```
+Error: Invalid or expired token
+```
+**Solution:**
+- Clear localStorage and login again
+- Check JWT_SECRET matches between requests
+- Verify token expiration time in backend
 
-## 📦 GitHub Repository Setup
+#### File Upload Fails
+```
+Error: File upload failed
+```
+**Solution:**
+- Check `uploads/` directory exists in backend
+- Verify file size is under 5MB
+- Ensure file is an image format (jpg, png, gif)
+- Check folder write permissions
+
+#### Port Already in Use
+```
+Error: Port 5000 is already in use
+```
+**Solution:**
+```bash
+# Find process using port
+lsof -i :5000  # Mac/Linux
+netstat -ano | findstr :5000  # Windows
+
+# Kill the process or change PORT in .env
+```
+
+## 🚢 Deployment
+
+### Backend Deployment (Heroku Example)
 
 ```bash
-# Initialize git (from project root)
-git init
-
-# Create .gitignore
-echo "node_modules/
-.env
-uploads/
-build/
-.DS_Store" > .gitignore
-
-# Add files
-git add .
-
-# Commit
-git commit -m "Initial commit: Employee Management System"
-
-# Create GitHub repository and push
-git remote add origin https://github.com/VirtualVince/3123-Assignment-2
-git branch -M main
-git push -u origin main
+cd backend
+heroku create your-app-name-backend
+heroku config:set MONGODB_URI=your_mongodb_atlas_uri
+heroku config:set JWT_SECRET=your_jwt_secret
+git push heroku main
 ```
 
-## 🚢 Docker Deployment (Optional)
+### Environment Variables for Production
 
-If you want to use Docker, create these files:
+**Backend:**
+- `MONGODB_URI` - You will need your own
+- `JWT_SECRET` - You will need your own
 
-**backend/Dockerfile:**
-```dockerfile
-FROM node:18
-WORKDIR /app
-COPY package*.json ./
-RUN npm install
-COPY . .
-EXPOSE 5000
-CMD ["npm", "start"]
-```
 
-**frontend/Dockerfile:**
-```dockerfile
-FROM node:18
-WORKDIR /app
-COPY package*.json ./
-RUN npm install
-COPY . .
-EXPOSE 3000
-CMD ["npm", "start"]
-```
+### Backend (.env)
 
-**docker-compose.yml (root):**
-```yaml
-version: '3.8'
-services:
-  mongodb:
-    image: mongo:latest
-    ports:
-      - "27017:27017"
-    volumes:
-      - mongodb_data:/data/db
+| Variable | Description | Example |
+|----------|-------------|---------|
+| MONGODB_URI | MongoDB connection string | `mongodb://localhost:27017/comp3123_assignment` |
+| JWT_SECRET | Secret key for JWT tokens | `your_super_secret_key_here` |
+| PORT | Server port number | `5000` |
 
-  backend:
-    build: ./backend
-    ports:
-      - "5000:5000"
-    environment:
-      - MONGODB_URI=mongodb://mongodb:27017/comp3123_assignment
-    depends_on:
-      - mongodb
+### Frontend (.env)
 
-  frontend:
-    build: ./frontend
-    ports:
-      - "3000:3000"
-    depends_on:
-      - backend
+| Variable | Description | Example |
+|----------|-------------|---------|
+| REACT_APP_API_URL | Backend API base URL | `http://localhost:5000/api/v1` |
 
-volumes:
-  mongodb_data:
-```
+## Contributing
 
-## 📄 License
+Contributions are welcome! Please feel free to submit a Pull Request.
 
-This project is created for educational purposes as part of COMP 3123 course assignment.
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
-## 👨‍💻 Author
+## License
 
-Vincente Sequeira - 101484793
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Author
+
+**Vincent**
+- GitHub: [@VirtualVince](https://github.com/VirtualVince)
+- Repository: [3123-Assignment-2](https://github.com/VirtualVince/3123-Assignment-2)
+
+##  Acknowledgments
+
+- COMP 3123 - Full Stack Development Course
+- George Brown College
+- MongoDB Documentation
+- React Documentation
+- Express.js Documentation
+
+## Support
+
+If you encounter any issues or have questions:
+- Open an issue on [GitHub Issues](https://github.com/VirtualVince/3123-Assignment-2/issues)
+- or send me an email through my contact from at [virtualvince.ca](https://virtualvince.ca/)
+
+---
+
+**Note:** This project was created for educational purposes as part of the COMP 3123 course assignment.
