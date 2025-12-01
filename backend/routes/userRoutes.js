@@ -4,7 +4,7 @@ const jwt = require('jsonwebtoken');
 const User = require('../models/User');
 
 // JWT Secret
-const JWT_SECRET = process.env.JWT_SECRET || 'your_jwt_secret_key_here';
+const JWT_SECRET = process.env.JWT_SECRET || 'jwt secret token';
 
 // POST /signup - Create new user
 router.post('/signup', async (req, res) => {
